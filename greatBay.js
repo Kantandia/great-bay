@@ -14,6 +14,7 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
     if (err) throw err;
     console.log("Connected at id "+connection.threadId);
+    signIn();
     userPrompt();
 });
 
@@ -22,7 +23,7 @@ function userPrompt(){
         {
             type: "list",
             message: "Please select between the following:",
-            choices: ["POST", "BID", "EXIT"],
+            choices: ["POST", "BID", "SEARCH", "EXIT"],
             name: "choices"
         }
     ]).then(function(res){
@@ -30,6 +31,8 @@ function userPrompt(){
             postItem();
         }else if(res.choices === "BID"){
             bidItem();
+        }else if(res.choices === "SEARCH"){
+            searchanItem();
         }else{
             console.log("See ya!");
             connection.end();
@@ -74,3 +77,39 @@ function bidItem(){
     console.log("Under construction");
     userPrompt();
 }
+
+
+function signIn() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Username: ",
+            name: "username"
+        },
+        {
+            type: "password",
+            message: "Password: ",
+            name: "password"
+        }
+    ]);
+}
+
+function searchItem(){
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Search an item by name or username: ",
+            name: "searchedItem"
+        }
+    ]).then(function(res){
+        connection.query("SELECT * FROM products",
+        for (var i = 0; i < poducts.length; i++){
+            if (searchedItem === products.name || searchedItem === products.category){
+                console.log("Item: ", products.name, "Current Bid: ", products.bid)
+            }
+        })
+        function(err, res) {
+            if (err) throw err;
+            console.log("Search Results: ", res.affectedRows)};
+        });
+    }
