@@ -74,3 +74,24 @@ function bidItem(){
     console.log("Under construction");
     userPrompt();
 }
+
+
+
+//function to post products to the database
+const posting = function(){
+    inquirer.prompt([
+      {
+        type: "input"
+        , name: "item"
+        , message: "What item do you want to post?"
+      }
+      , {
+        type: "input"
+        , name: "category"
+        , message: "What category does your item belong in?"
+      }
+      , {
+        type: "input"
+        , name: "startingBid"
+        , message: "How much do you want your starting bid to be?"
+      }
