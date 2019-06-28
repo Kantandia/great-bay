@@ -1,0 +1,25 @@
+{
+  "name": "great-bay",
+  "version": "1.0.0",
+  "description": "**Instructions**",
+  "main": "logic.js",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kantandia/great-bay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kantandia/great-bay/issues"
+  },
+  "homepage": "https://github.com/Kantandia/great-bay#readme"
+}
